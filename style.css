@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f6f9;
+    background-color: #616366;
     color: #91982c;
     margin: 0;
     padding: 0;
@@ -12,7 +12,7 @@ body {
 }
 
 header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./azov.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('_azov_.jpg');
     background-size: cover;
     background-position: center;
     color: white;
@@ -52,8 +52,8 @@ button:hover {
 }
 
 footer {
-    background-color: #0098fe;
-    color: #2c3e50;
+    background-color:rgb(36, 36, 89);
+    color:  #b8bc4d;
     padding: 1rem;
     font-size: 0.9rem;
 }
