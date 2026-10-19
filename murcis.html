@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Murcis</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #0f0f1a;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Fondo animado de corazones */
+        .hearts-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .heart {
+            position: absolute;
+            color: rgba(255, 215, 0, 0.25);
+            font-size: 20px;
+            animation: floatUp linear infinite;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) scale(0.5);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-10vh) scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            color: #ffd700;
+            font-size: 2.5rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+            margin-bottom: 10px;
+        }
+
+        .volver-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #ffd700;
+            color: #1a1a2e;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            transition: background 0.3s;
+        }
+
+        .volver-btn:hover {
+            background-color: #e6c200;
+        }
+
+        /* Contenedor del Collage */
+        .collage-container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .collage-item {
+            background: #1a1a2e;
+            border: 2px solid #ffd700;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+            cursor: pointer; /* Cambia el cursor a manita para indicar que se puede hacer clic */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .collage-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 25px rgba(255, 215, 0, 0.3);
+        }
+
+        .collage-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* ESTILOS PARA EL VISOR DE FOTO GRANDE (MODAL) */
+        .modal {
+            display: none; /* Oculto por defecto */
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85); /* Fondo oscuro semitransparente */
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            max-width: 85%;
+            max-height: 85vh;
+            border: 3px solid #ffd700;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #ffd700;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .close-btn:hover {
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fondo de corazones flotantes -->
+    <div class="hearts-bg" id="hearts-container"></div>
+
+    <header>
+        <h1>Galería Especial</h1>
+        <p>Haz clic en cualquier foto para verla en grande.</p>
+        <a href="index.html" class="volver-btn">← Volver al Búnker</a>
+    </header>
+
+    <!-- Cuadrícula del Collage -->
+    <main class="collage-container">
+        <!-- Agregamos el evento onclick a cada imagen pasando su propia ruta -->
+        <div class="collage-item" onclick="abrirModal('negra1.jpeg')"><img src="negra1.jpeg" alt="Foto 1"></div>
+        <div class="collage-item" onclick="abrirModal('negra2.jpeg')"><img src="negra2.jpeg" alt="Foto 2"></div>
+        <div class="collage-item" onclick="abrirModal('negra3.jpeg')"><img src="negra3.jpeg" alt="Foto 3"></div>
+        <div class="collage-item" onclick="abrirModal('negra4.jpeg')"><img src="negra4.jpeg" alt="Foto 4"></div>
+        <div class="collage-item" onclick="abrirModal('negra5.jpeg')"><img src="negra5.jpeg" alt="Foto 5"></div>
+        <div class="collage-item" onclick="abrirModal('negra6.jpeg')"><img src="negra6.jpeg" alt="Foto 6"></div>
+        <div class="collage-item" onclick="abrirModal('negra7.jpeg')"><img src="negra7.jpeg" alt="Foto 7"></div>
+        <div class="collage-item" onclick="abrirModal('negra8.jpeg')"><img src="negra8.jpeg" alt="Foto 8"></div>
+        <div class="collage-item" onclick="abrirModal('negra9.jpeg')"><img src="negra9.jpeg" alt="Foto 9"></div>
+        <div class="collage-item" onclick="abrirModal('negra10.jpeg')"><img src="negra10.jpeg" alt="Foto 10"></div>
+    </main>
+
+    <!-- VENTANA EMERGENTE (MODAL) PARA AMPLIAR LA FOTO -->
+    <div id="fotoModal" class="modal" onclick="cerrarModal()">
+        <span class="close-btn">&times;</span>
+        <img class="modal-content" id="imgGrande">
+    </div>
+
+    <script>
+        // 1. Generador de corazones flotantes
+        const heartsContainer = document.getElementById('hearts-container');
+        const numHearts = 25;
+
+        for (let i = 0; i < numHearts; i++) {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 5 + 5) + 's';
+            heart.style.animationDelay = (Math.random() * 5) + 's';
+            heartsContainer.appendChild(heart);
+        }
+
+        // 2. Funciones de JavaScript para abrir y cerrar la foto en grande
+        function abrirModal(rutaImagen) {
+            var modal = document.getElementById("fotoModal");
+            var imgDestino = document.getElementById("imgGrande");
+            
+            modal.style.display = "flex"; // Muestra el contenedor oscuro
+            imgDestino.src = rutaImagen;   // Carga la foto seleccionada
+        }
+
+        function cerrarModal() {
+            var modal = document.getElementById("fotoModal");
+            modal.style.display = "none"; // Oculta el contenedor al hacer clic
+        }
+    </script>
+</body>
+</html>
