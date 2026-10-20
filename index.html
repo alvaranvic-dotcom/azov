@@ -3,35 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sitio de las negras</title>
+    <title>Sitio de las chiquillas</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
     <!-- Agregamos la imagen aquí arriba -->
-    <img src="images.jpg" alt="Mi imagen" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 10px; border: 3px solid white;">
+    <img src="thora.jpg" alt="Mi imagen" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 10px; border: 3px solid white;">
     
     <h1>¡Hola, Amigo! </h1>
-    <p>Bienvenido a mi bunker de odio.</p>
+    <p>¡Bienvenido a la página de mis chiquillas! 
+       <p></p> Este es un pequeño espacio donde comparto la historia de las seis perritas
+       <p></p> que llenan mi hogar de pelos y caca</p>
 </header>
     </header>
 
     <main>
     <!-- PRIMERA TARJETA: Mis perritas -->
-    <section class="card">
-        <h2>Mis Perritas</h2>
-        <p>No quiero un lugar en su paraíso. Denme una esquina en el infierno, una botella, mis perros y que venga el mundo entero a buscarme.</p>
+<section class="card">
+    <h2>Mis Perritas</h2>
+    <p>Rouse y Sara eran las perritas de mi papá. Thora era mi perrita. Tiempo después, Sara quedó embarazada de forma accidental y, como nadie sabía quién era el padre de las cachorras, fue “obra del Espíritu Santo”.</p>
+    
+    <!-- Contenedor único para alinear los tres botones juntos y ordenados -->
+    <div style="margin-top: 20px; display: flex; justify-content: center; gap: 15px; position: relative;">
         
-        <div style="position: relative; display: inline-block; margin-top: 15px;">
-            <button onclick="alternarFoto()">Haz clic aquí</button>
-
-            <!-- Burbuja emergente de la primera tarjeta -->
-            <div id="contenedor-foto" style="display: none; position: absolute; bottom: 125%; left: 50%; transform: translateX(-50%); background: #1a1a2e; border: 2px solid #ffd700; padding: 12px; border-radius: 10px; box-shadow: 0px 4px 15px rgba(0,0,0,0.5); z-index: 100; text-align: center; width: 220px;">
-                <p style="color: #ffd700; margin-bottom: 8px; font-weight: bold; font-size: 14px;">¡Hola amigo!</p>
+        <!-- Botón 1: Sara -->
+        <div style="position: relative; display: inline-block;">
+            <button onclick="alternarSara()">Ver a Sara</button>
+            <div id="contenedor-sara" style="display: none; position: absolute; bottom: 125%; left: 50%; transform: translateX(-50%); background: #1a1a2e; border: 2px solid #ffd700; padding: 12px; border-radius: 10px; box-shadow: 0px 4px 15px rgba(0,0,0,0.5); z-index: 100; text-align: center; width: 220px;">
+                <p style="color: #ffd700; margin-bottom: 8px; font-weight: bold; font-size: 14px;">¡Sara!</p>
                 <img src="sara.jpg" alt="Sara" style="width: 100%; height: auto; border-radius: 6px; display: block;">
             </div>
         </div>
-    </section>
+
+        <!-- Botón 2: Thora -->
+        <div style="position: relative; display: inline-block;">
+            <button onclick="alternarThora()">Ver a Thora</button>
+            <div id="contenedor-boba2" style="display: none; position: absolute; bottom: 125%; left: 50%; transform: translateX(-50%); background: #1a1a2e; border: 2px solid #ffd700; padding: 12px; border-radius: 10px; box-shadow: 0px 4px 15px rgba(0,0,0,0.5); z-index: 100; text-align: center; width: 220px;">
+                <p style="color: #ffd700; margin-bottom: 8px; font-weight: bold; font-size: 14px;">Thora!</p>
+                <img src="boba2.jpeg" alt="boba2" style="width: 100%; height: auto; border-radius: 6px; display: block;">
+            </div>
+        </div>
+
+        <!-- Botón 3: Rouse -->
+        <div style="position: relative; display: inline-block;">
+            <button onclick="alternarRouse()">Ver a Rouse</button>
+            <div id="contenedor-rouse" style="display: none; position: absolute; bottom: 125%; left: 50%; transform: translateX(-50%); background: #1a1a2e; border: 2px solid #ffd700; padding: 12px; border-radius: 10px; box-shadow: 0px 4px 15px rgba(0,0,0,0.5); z-index: 100; text-align: center; width: 220px;">
+                <p style="color: #ffd700; margin-bottom: 8px; font-weight: bold; font-size: 14px;">¡Rouse!</p>
+                <img src="rouse.jpg" alt="Rouse" style="width: 100%; height: auto; border-radius: 6px; display: block;">
+            </div>
+        </div>
+
+    </div>
+</section>
+</section>
 
     <!-- SEGUNDA TARJETA: Las murcis -->
     <<section class="card" style="margin-top: 20px;">
@@ -50,20 +75,27 @@
     </footer>
 
     <script>
-        function saludar() {
-            alert("¡Holaaaa amigoooo.");
-        }
-        function alternarFoto() {
-        var elemento = document.getElementById("contenedor-foto");
+    function alternarSara() {
+        var elemento = document.getElementById("contenedor-sara");
         if (elemento.style.display === "none") {
             elemento.style.display = "block";
         } else {
             elemento.style.display = "none";
         }
     }
-    function alternarFoto() {
-        var elemento = document.getElementById("contenedor-foto");
+
+    function alternarThora() {
+        var elemento = document.getElementById("contenedor-boba2");
         elemento.style.display = (elemento.style.display === "none") ? "block" : "none";
+    }
+
+    function alternarRouse() {
+        var elemento = document.getElementById("contenedor-rouse");
+        if (elemento.style.display === "none") {
+            elemento.style.display = "block";
+        } else {
+            elemento.style.display = "none";
+        }
     }
 
     function irAMurcis() {

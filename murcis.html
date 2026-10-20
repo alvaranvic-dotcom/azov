@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería de Murcis</title>
+    <title>Galería de Murcis más las grandotas</title>
     <style>
         * {
             box-sizing: border-box;
@@ -161,28 +161,41 @@
     <!-- Fondo de corazones flotantes -->
     <div class="hearts-bg" id="hearts-container"></div>
 
+    <!-- ENCABEZADO PRINCIPAL -->
     <header>
-        <h1>Galería de Michelle, Noemi y Toña</h1>
+        <h1>Galería de Las Negras y Las Grandotas</h1>
         <p>Haz clic en cualquier foto para verla en grande.</p>
         <a href="index.html" class="volver-btn">← Volver al Búnker</a>
     </header>
 
-    <!-- Cuadrícula del Collage -->
-    <main class="collage-container">
-        <!-- Agregamos el evento onclick a cada imagen pasando su propia ruta -->
-        <div class="collage-item" onclick="abrirModal('negra1.jpeg')"><img src="negra1.jpeg" alt="Foto 1"></div>
-        <div class="collage-item" onclick="abrirModal('negra2.jpeg')"><img src="negra2.jpeg" alt="Foto 2"></div>
-        <div class="collage-item" onclick="abrirModal('negra3.jpeg')"><img src="negra3.jpeg" alt="Foto 3"></div>
-        <div class="collage-item" onclick="abrirModal('negra4.jpeg')"><img src="negra4.jpeg" alt="Foto 4"></div>
-        <div class="collage-item" onclick="abrirModal('negra5.jpeg')"><img src="negra5.jpeg" alt="Foto 5"></div>
-        <div class="collage-item" onclick="abrirModal('negra6.jpeg')"><img src="negra6.jpeg" alt="Foto 6"></div>
-        <div class="collage-item" onclick="abrirModal('negra7.jpeg')"><img src="negra7.jpeg" alt="Foto 7"></div>
-        <div class="collage-item" onclick="abrirModal('negra8.jpeg')"><img src="negra8.jpeg" alt="Foto 8"></div>
-        <div class="collage-item" onclick="abrirModal('negra9.jpeg')"><img src="negra9.jpeg" alt="Foto 9"></div>
-        <div class="collage-item" onclick="abrirModal('negra10.jpeg')"><img src="negra10.jpeg" alt="Foto 10"></div>
+    <main>
+        <!-- SECCIÓN 1: LAS NEGRAS -->
+        <h2 style="text-align: center; color: #ffd700; margin-top: 30px;">Michelle, Noemi y Toña (Las Negras)</h2>
+        <div class="collage-container">
+            <div class="collage-item" onclick="abrirModal('negra1.jpeg')"><img src="negra1.jpeg" alt="Foto 1"></div>
+            <div class="collage-item" onclick="abrirModal('negra2.jpeg')"><img src="negra2.jpeg" alt="Foto 2"></div>
+            <div class="collage-item" onclick="abrirModal('negra3.jpeg')"><img src="negra3.jpeg" alt="Foto 3"></div>
+            <div class="collage-item" onclick="abrirModal('negra4.jpeg')"><img src="negra4.jpeg" alt="Foto 4"></div>
+            <div class="collage-item" onclick="abrirModal('negra5.jpeg')"><img src="negra5.jpeg" alt="Foto 5"></div>
+            <div class="collage-item" onclick="abrirModal('negra6.jpeg')"><img src="negra6.jpeg" alt="Foto 6"></div>
+            <div class="collage-item" onclick="abrirModal('negra7.jpeg')"><img src="negra7.jpeg" alt="Foto 7"></div>
+            <div class="collage-item" onclick="abrirModal('negra8.jpeg')"><img src="negra8.jpeg" alt="Foto 8"></div>
+            <div class="collage-item" onclick="abrirModal('negra9.jpeg')"><img src="negra9.jpeg" alt="Foto 9"></div>
+            <div class="collage-item" onclick="abrirModal('negra10.jpeg')"><img src="negra10.jpeg" alt="Foto 10"></div>
+        </div>
+
+        <!-- SECCIÓN 2: LAS GRANDOTAS -->
+        <h2 style="text-align: center; color: #ffd700; margin-top: 50px;">Las Grandotas ,Thora, Rouse y Sarampion</h2>
+        <div class="collage-container">
+            <div class="collage-item" onclick="abrirModal('grande1.jpeg')"><img src="grande1.jpeg" alt="Foto Grandota 1"></div>
+            <div class="collage-item" onclick="abrirModal('grande2.jpeg')"><img src="grande2.jpeg" alt="Foto Grandota 2"></div>
+            <div class="collage-item" onclick="abrirModal('grande3.jpeg')"><img src="grande3.jpeg" alt="Foto Grandota 3"></div>
+            <div class="collage-item" onclick="abrirModal('grande4.jpeg')"><img src="grande4.jpeg" alt="Foto Grandota 4"></div>
+            <div class="collage-item" onclick="abrirModal('grande5.jpeg')"><img src="grande5.jpeg" alt="Foto Grandota 5"></div>
+        </div>
     </main>
 
-    <!-- VENTANA EMERGENTE (MODAL) PARA AMPLIAR LA FOTO -->
+    <!-- VENTANA EMERGENTE ÚNICA (MODAL) PARA AMPLIAR CUALQUIER FOTO -->
     <div id="fotoModal" class="modal" onclick="cerrarModal()">
         <span class="close-btn">&times;</span>
         <img class="modal-content" id="imgGrande">

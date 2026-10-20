@@ -1,59 +1,63 @@
+/* 1. Fondo general con los perritos y un filtro oscuro elegante */
 body {
+    background-image: linear-gradient(rgba(15, 15, 26, 0.88), rgba(15, 15, 26, 0.88)), url('fondo.jpg');
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-color: #0f0f1a;
+    color: #ffffff;
     font-family: Arial, sans-serif;
-    background-color: #616366;
-    color: #91982c;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    justify-content: space-between;
-    text-align: center;
 }
 
+/* 2. Encabezado limpio */
 header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('azov.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    padding: 4rem 2rem;
-}
-
-main {
-    background-image: url('images (2).jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    text-align: center;
     padding: 3rem 2rem;
 }
 
-.card {
-    background: rgb(36, 36, 89);
-    max-width: 400px;
-    margin: 0 auto;
+/* 3. Contenedor principal */
+main {
     padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* 4. Tarjetas oscuras con borde dorado */
+.card {
+    background-color: rgba(26, 26, 46, 0.92);
+    border: 2px solid #ffd700;
+    border-radius: 12px;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    text-align: center;
+}
+
+/* 5. Estilos de botones */
 button {
     background-color: #b8bc4d;
-    color: rgb(204, 195, 195);
+    color: #1a1a2e;
+    font-weight: bold;
     border: none;
     padding: 10px 20px;
     font-size: 1rem;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
     margin-top: 15px;
+    transition: background 0.3s ease;
 }
 
 button:hover {
     background-color: #fc0000;
+    color: #ffffff;
 }
 
+/* 6. Pie de página */
 footer {
-    background-color:rgb(36, 36, 89);
-    color:  #b8bc4d;
+    background-color: rgba(26, 26, 46, 0.95);
+    color: #b8bc4d;
+    text-align: center;
     padding: 1rem;
     font-size: 0.9rem;
+    margin-top: 40px;
 }
